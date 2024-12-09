@@ -1,0 +1,9 @@
+.container{
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid #F3F3F3;
+
+  & > div {
+    padding: 10px;
+  }
+}
