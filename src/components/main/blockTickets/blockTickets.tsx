@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './blockTickets.module.scss'
 import {Ticket} from '../ticket'
-import {TicketsInterface} from '../../../utils/interface'
 import json from '../../../assets/tickets.json'
+import {useSortedItems} from "../../../utils/hooks";
 
 const BlockTickets: React.FC = () => {
-    const [tickets, setTickets] = React.useState<TicketsInterface[]>(json.tickets.sort((a, b) => b.price - a.price) || []);
+    const tickets = useSortedItems(json.tickets || []);
 
     return (
         <div className={`${styles.container}`}>
