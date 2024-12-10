@@ -27,7 +27,7 @@ const Ticket: React.FC<ITicketProps> = ({
                     {carrier}
                 </div>
                 <div>
-                    <a href={`${index}`}>Купить</a>
+                    <a href={`${index}`}>Купить за {price} &#8381;</a>
                 </div>
             </div>
             <div>
