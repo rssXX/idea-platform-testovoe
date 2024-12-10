@@ -1,5 +1,6 @@
 import React from 'react';
 import {TicketsInterface} from '../../../utils/interface'
+import {motion} from 'motion/react'
 import styles from './ticket.module.scss'
 
 interface ITicketProps extends TicketsInterface {
@@ -21,7 +22,14 @@ const Ticket: React.FC<ITicketProps> = ({
     index,
 }) => {
     return (
-        <div className={`${styles.container}`}>
+        <motion.div
+            layout
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className={`${styles.container}`}
+        >
             <div>
                 <div>
                     {carrier}
@@ -33,7 +41,7 @@ const Ticket: React.FC<ITicketProps> = ({
             <div>
                 {origin_name}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
