@@ -1,19 +1,36 @@
-import {useMemo} from 'react';
-import {useSortStore} from "../../store";
-import {TicketsInterface} from '../interface'
+import {useEffect, useMemo} from 'react';
+import json from '../../assets/tickets.json'
+import {useFilterStore, useSortStore, useItemsStore} from "../../store";
 
-const useSortedItems = (items: TicketsInterface[]) => {
-    const { sortOption } = useSortStore();
+const useSortedItems = () => {
+    const { items, setItems } = useItemsStore()
+    const { sortOption, setSortOption } = useSortStore();
+    const { stopsFilter, setStopsFilter } = useFilterStore()
 
-    return useMemo(() => {
-        if (sortOption === 'cheap-first') {
-            return [...items].sort((a, b) => a.price - b.price);
+    const sortedAndFilteredItems = useMemo(() => {
+        return [...items]
+            .filter(item => stopsFilter === 'all' || item.stops === stopsFilter) // Фильтрация
+            .sort((a, b) => {
+                if (sortOption === 'cheap-first') return a.price - b.price;
+                if (sortOption === 'expensive-first') return b.price - a.price;
+                return 0; // Без сортировки
+            });
+    }, [sortOption, stopsFilter, items]);
+
+    useEffect(() => {
+        if (items.length == 0 ){
+            setItems(json.tickets || [])
         }
-        if (sortOption === 'expensive-first') {
-            return [...items].sort((a, b) => b.price - a.price);
-        }
-        return items;
-    }, [sortOption, items]);
+    }, [items, setItems])
+
+    return {
+        tickets: sortedAndFilteredItems,
+        setItems,
+        sortOption,
+        stopsFilter,
+        setSortOption,
+        setStopsFilter,
+    }
 };
 
 export default useSortedItems

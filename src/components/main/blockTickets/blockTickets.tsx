@@ -2,11 +2,10 @@ import React from 'react';
 import styles from './blockTickets.module.scss'
 import {Ticket} from '../ticket'
 import {motion} from 'motion/react'
-import json from '../../../assets/tickets.json'
 import {useSortedItems} from "../../../utils/hooks";
 
 const BlockTickets: React.FC = () => {
-    const tickets = useSortedItems(json.tickets || []);
+    const {tickets} = useSortedItems();
 
     return (
         <motion.div
