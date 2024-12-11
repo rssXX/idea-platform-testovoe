@@ -1,5 +1,5 @@
-import useSortedItems from './useSortedItems.ts'
+import useSortedAndFilteredItems from './useSortedAndFilteredItems.ts'
 
 export {
-    useSortedItems,
+    useSortedAndFilteredItems,
 }
