@@ -4,7 +4,7 @@ import {BlockFiltersAndSort, BlockTickets} from '../../components/main'
 
 const MainPage: React.FC = () => {
     return (
-        <div className={`container ${styles.container}`}>
+        <div className={`${styles.wrapper}`}>
             <BlockFiltersAndSort/>
             <BlockTickets/>
         </div>
