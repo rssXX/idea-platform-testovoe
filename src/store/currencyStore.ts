@@ -1,9 +1,8 @@
 import { create } from "zustand";
-
-type Currency = "USD" | "EUR" | "RUB";
+import { CurrencyType } from '../utils/types'
 
 interface CurrencyStore {
-    currency: Currency;
+    currency: CurrencyType;
     setCurrency: (currency: string) => void;
 }
 

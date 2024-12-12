@@ -1,12 +1,7 @@
 import {useEffect, useMemo} from 'react';
 import json from '../../assets/tickets.json'
 import {useFilterStore, useSortStore, useItemsStore, useCurrencyStore} from "../../store";
-
-const exchangeRates = {
-    RUB: 1,
-    USD: 0.0097,
-    EUR: 0.0092,
-};
+import {exchangeRates} from '../consts'
 
 const useSortedAndFilteredItems = () => {
     const { items, setItems } = useItemsStore()
@@ -25,7 +20,7 @@ const useSortedAndFilteredItems = () => {
 
         filteredAndSortedItems = filteredAndSortedItems.map((item) => ({
             ...item,
-            price: Math.round(item.price * exchangeRates[currency]),
+            price: Math.round(item.price * exchangeRates[currency].rates),
         }));
 
         if (sortOption === "cheap-first") {

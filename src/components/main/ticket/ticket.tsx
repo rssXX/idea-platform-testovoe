@@ -2,25 +2,29 @@ import React from 'react';
 import {TicketsInterface} from '../../../utils/interface'
 import {motion} from 'motion/react'
 import styles from './ticket.module.scss'
+import {useCurrencyStore} from "../../../store";
+import {exchangeRates} from "../../../utils/consts";
 
 interface ITicketProps extends TicketsInterface {
     index: number
 }
 
 const Ticket: React.FC<ITicketProps> = ({
-                                                 origin,
-                                                 origin_name,
-                                                 destination,
-                                                 destination_name,
-                                                 departure_date,
-                                                 departure_time,
-                                                 arrival_date,
-                                                 arrival_time,
-                                                 carrier,
-                                                 stops,
-                                                 price,
+    origin,
+    origin_name,
+    destination,
+    destination_name,
+    departure_date,
+    departure_time,
+    arrival_date,
+    arrival_time,
+    carrier,
+    stops,
+    price,
     index,
 }) => {
+    const {currency} = useCurrencyStore()
+
     return (
         <motion.div
             layout
@@ -34,7 +38,7 @@ const Ticket: React.FC<ITicketProps> = ({
                     {carrier}
                 </div>
                 <div>
-                    <a href={`${index}`}>Купить за {price} &#8381;</a>
+                    <a href={`${index}`}>Купить за {price} {exchangeRates[currency].icon}  </a>
                 </div>
             </div>
             <div>
