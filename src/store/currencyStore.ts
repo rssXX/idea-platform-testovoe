@@ -4,7 +4,7 @@ type Currency = "USD" | "EUR" | "RUB";
 
 interface CurrencyStore {
     currency: Currency;
-    setCurrency: (currency: Currency) => void;
+    setCurrency: (currency: string) => void;
 }
 
 const useCurrencyStore = create<CurrencyStore>((set) => ({
