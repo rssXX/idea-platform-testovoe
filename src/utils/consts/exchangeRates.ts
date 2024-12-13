@@ -1,13 +1,9 @@
-import {CurrencyType} from '../types'
+import type {CurrencyType} from '../types'
 
-interface IExchangeRatesProps{
-    [key: CurrencyType]: {
-        rates: number,
-        icon: string,
-    }
-}
-
-const exchangeRates: IExchangeRatesProps = {
+const exchangeRates: Record<CurrencyType, {
+    rates: number,
+    icon: string,
+}> = {
     RUB: {
         rates: 1,
         icon: '\u20BD',

@@ -1,5 +1,5 @@
 import {CurrencyType} from './general.ts'
 
-export {
+export type {
     CurrencyType
 }

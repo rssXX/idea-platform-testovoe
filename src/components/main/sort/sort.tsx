@@ -1,6 +1,5 @@
 import React from 'react';
 import {useSortStore} from "../../../store";
-import styles from './sort.module.scss'
 
 const Sort: React.FC = () => {
     const { sortOption, setSortOption } = useSortStore();

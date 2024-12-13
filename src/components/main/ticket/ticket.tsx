@@ -10,16 +10,8 @@ interface ITicketProps extends TicketsInterface {
 }
 
 const Ticket: React.FC<ITicketProps> = ({
-    origin,
     origin_name,
-    destination,
-    destination_name,
-    departure_date,
-    departure_time,
-    arrival_date,
-    arrival_time,
     carrier,
-    stops,
     price,
     index,
 }) => {

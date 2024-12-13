@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { CurrencyType } from '../utils/types'
+import type { CurrencyType } from '../utils/types'
 
 interface CurrencyStore {
     currency: CurrencyType;
-    setCurrency: (currency: string) => void;
+    setCurrency: (currency: CurrencyType) => void;
 }
 
 const useCurrencyStore = create<CurrencyStore>((set) => ({

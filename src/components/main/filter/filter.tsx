@@ -4,9 +4,9 @@ import {useFilterStore} from "../../../store";
 const Filter: React.FC = () => {
     const { stopsFilter, setStopsFilter, optionsFilter: options } = useFilterStore();
 
-    const isSelected = (id) => stopsFilter.includes(id);
+    const isSelected = (id: number) => stopsFilter.includes(id);
 
-    const handleCheckboxChange = (id) => {
+    const handleCheckboxChange = (id: number) => {
         if (stopsFilter.includes(id)) {
             setStopsFilter(stopsFilter.filter((optionId) => optionId !== id));
         } else {
