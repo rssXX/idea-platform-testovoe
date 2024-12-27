@@ -1,4 +1,4 @@
-# Текстовое задание Idea Platform
+# Тестовое задание Idea Platform
 
 Тестовое задание в компанию Idea Platform на вакансию «Front-end разработчик».
 
