@@ -23,7 +23,7 @@ const Ticket: React.FC<ITicketProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`${styles.container}`}
+            className={`card ${styles.container}`}
         >
             <div>
                 <div>

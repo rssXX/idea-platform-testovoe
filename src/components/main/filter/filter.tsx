@@ -15,7 +15,7 @@ const Filter: React.FC = () => {
     };
 
     return (
-        <div>
+        <>
             {options.map((option) => (
                 <div key={option.id}>
                     <label>
@@ -28,7 +28,7 @@ const Filter: React.FC = () => {
                     </label>
                 </div>
             ))}
-        </div>
+        </>
     );
 };
 

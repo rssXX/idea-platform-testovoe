@@ -9,13 +9,11 @@ const Sort: React.FC = () => {
     };
 
     return (
-        <div>
-            <select value={sortOption} onChange={handleSortChange}>
-                <option value="default">По умолчанию</option>
-                <option value="cheap-first">Сначала недорогие</option>
-                <option value="expensive-first">Сначала дорогие</option>
-            </select>
-        </div>
+        <select value={sortOption} onChange={handleSortChange}>
+            <option value="default">По умолчанию</option>
+            <option value="cheap-first">Сначала недорогие</option>
+            <option value="expensive-first">Сначала дорогие</option>
+        </select>
     );
 };
 
