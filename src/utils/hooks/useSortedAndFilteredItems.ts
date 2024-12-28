@@ -1,7 +1,6 @@
 import {useEffect, useMemo} from 'react';
 import json from '../../assets/tickets.json'
 import {useFilterStore, useSortStore, useItemsStore, useCurrencyStore} from "../../store";
-import {exchangeRates} from '../consts'
 
 const useSortedAndFilteredItems = () => {
     const { items, setItems } = useItemsStore()
