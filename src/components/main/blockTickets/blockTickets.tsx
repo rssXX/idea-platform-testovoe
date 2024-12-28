@@ -3,9 +3,12 @@ import styles from './blockTickets.module.scss'
 import {Ticket} from '../ticket'
 import {motion} from 'motion/react'
 import {useSortedAndFilteredItems} from "../../../utils/hooks";
+import {exchangeRates} from "../../../utils/consts";
+import {useCurrencyStore} from "../../../store";
 
 const BlockTickets: React.FC = () => {
     const {tickets} = useSortedAndFilteredItems();
+    const {currency} = useCurrencyStore()
 
     return (
         <motion.div
@@ -14,11 +17,12 @@ const BlockTickets: React.FC = () => {
             transition={{ duration: 0.5 }}
             className={`${styles.container}`}
         >
-            {tickets.map((ticket, index) => (
+            {tickets.map((ticket) => (
                 <Ticket
                     key={`${ticket.origin}-${ticket.destination}-${ticket.departure_date}-${ticket.departure_time}-${ticket.arrival_date}-${ticket.arrival_time}`}
-                    index={index}
                     {...ticket}
+                    price={Math.round(ticket.price * exchangeRates[currency].rates)}
+                    simbole={exchangeRates[currency].icon}
                 />
             ))}
         </motion.div>

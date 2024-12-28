@@ -1,0 +1,19 @@
+.container{
+    @apply flex
+}
+
+.btn{
+    @apply flex-1 p-2.5 font-medium text-sm text-blue-500 border border-slate-200 -ml-px border-l-transparent
+}
+
+.btn:first-child{
+    @apply rounded-l-lg border-l-slate-200
+}
+
+.btn:last-child{
+    @apply rounded-r-lg
+}
+
+.btn:hover{
+    @apply border-blue-500 bg-blue-50
+}

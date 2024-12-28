@@ -18,11 +18,6 @@ const useSortedAndFilteredItems = () => {
             );
         }
 
-        filteredAndSortedItems = filteredAndSortedItems.map((item) => ({
-            ...item,
-            price: Math.round(item.price * exchangeRates[currency].rates),
-        }));
-
         if (sortOption === "cheap-first") {
             return filteredAndSortedItems.sort((a, b) => a.price - b.price);
         }

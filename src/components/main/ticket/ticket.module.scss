@@ -1,7 +1,19 @@
 .container{
-  display: flex;
+  @apply flex;
 
   & > div {
-    padding: 10px;
+    @apply p-6;
   }
+}
+
+.btnBuy{
+  @apply text-center bg-orange-600 text-white rounded px-8 py-1 max-w-40 transition-colors duration-500 ease-in-out;
+
+  &:hover{
+    @apply bg-orange-500;
+  }
+}
+
+.time{
+  @apply text-3xl;
 }

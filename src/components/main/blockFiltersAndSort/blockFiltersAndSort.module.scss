@@ -1,3 +1,7 @@
 .container{
     @apply flex flex-col gap-y-1.5 p-2.5 w-[250px]
 }
+
+.title {
+    @apply font-medium uppercase text-zinc-700
+}
